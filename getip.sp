@@ -17,14 +17,14 @@ stock char[] GetServerIp()
 		
 	// iHostIP = GetConVarInt(FindConVar("hostip"));
 	
-	int sOctets[4];
-	Steam_GetPublicIP(sOctets);
+	int iOctets[4];
+	Steam_GetPublicIP(iOctets);
 	
 	iHostIP = 
-		sOctets[0] << 24	|
-		sOctets[1] << 16	|
-		sOctets[2] << 8	|
-		sOctets[3];
+		iOctets[0] << 24	|
+		iOctets[1] << 16	|
+		iOctets[2] << 8	|
+		iOctets[3];
 		
 	char sHostPort[16];
 	GetConVarString(FindConVar("hostport"), sHostPort, sizeof(sHostPort));
